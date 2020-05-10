@@ -1,7 +1,10 @@
 .header {
   padding: 1em 0;
   justify-content: space-between;
-  position: relative; }
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  background: white; }
   .header__logo {
     align-self: center; }
   .header .button {
@@ -29,6 +32,8 @@
     background: url("../images/image-mockups.png") center bottom no-repeat, url("../images/bg-intro-mobile.svg") center no-repeat;
     background-size: 345px, cover;
     margin-bottom: 1.2em; }
+  .hero__imageSrc {
+    display: none; }
   @media screen and (min-width: 768px) {
     .hero {
       text-align: left;
@@ -38,19 +43,15 @@
       box-sizing: border-box; }
       .hero__content {
         position: relative;
-        border: 1px solid red;
         display: grid;
         align-items: center;
         min-height: 550px;
         grid-template-areas: "description image";
-        grid-template-columns: 480px 1fr; }
-      .hero__description {
-        border: 1px solid green; }
+        grid-template-columns: 370px 1fr; }
       .hero__image {
         grid-area: image;
         min-height: inherit;
         position: absolute;
-        border: 1px solid purple;
         width: 500px;
         left: 0;
         top: 0;
@@ -58,9 +59,13 @@
         background: url("../images/image-mockups.png") left bottom no-repeat;
         background-size: cover; } }
   @media screen and (min-width: 1024px) {
+    .hero__imageSrc {
+      display: block;
+      position: relative;
+      top: -150px;
+      z-index: 1; }
     .hero__image {
-      background: url("../images/image-mockups.png") right bottom no-repeat;
-      background-size: 100%;
+      background: none;
       left: 150px;
       right: 0;
       top: 0; } }
@@ -106,7 +111,8 @@
         color: var(--darkBlue);
         font-size: 1.1em;
         display: block;
-        text-align: center; }
+        text-align: center;
+        flex: 1; }
   @media screen and (min-width: 1024px) {
     .menu {
       display: flex; }

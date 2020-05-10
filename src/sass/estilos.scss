@@ -16,7 +16,9 @@
   font-size: 16px;
   --wrapperSpace: 1.5em;
 }
-
+html {
+  // overflow: hidden;
+}
 body {
   font-family: 'Public Sans', sans-serif;
   margin: 0;

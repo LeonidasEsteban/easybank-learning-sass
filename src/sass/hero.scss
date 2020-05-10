@@ -13,6 +13,9 @@
     background-size: 345px, cover;
     margin-bottom: 1.2em;
   }
+  &__imageSrc {
+    display: none;
+  }
   @media screen and (min-width: 768px) {
     text-align: left;
     background: url('../images/bg-intro-desktop.svg') left 650px top -290px no-repeat ;
@@ -22,22 +25,23 @@
 
     &__content {
       position: relative;
-      border: 1px solid red;
+      // border: 1px solid red;
       display: grid;
       align-items: center;
       min-height: 550px;
       grid-template-areas: "description image";
-      grid-template-columns: 480px 1fr;
+      grid-template-columns: 370px 1fr;
     }
     &__description {
-      border: 1px solid green;
+      // border: 1px solid green;
     }
+
     &__image {
       grid-area: image;
       min-height: inherit;
       // background: none;
       position: absolute;
-      border: 1px solid purple;
+      // border: 1px solid purple;
       width: 500px;
       // left: 550px;
       left: 0;
@@ -52,10 +56,17 @@
     &__content {
       // position: static;
     }
+    &__imageSrc {
+      display: block;
+      position: relative;
+      top: -150px;
+      z-index: 1;
+    }
     &__image {
       // border: 10px solid pink;
-      background: url('../images/image-mockups.png') right bottom no-repeat;
-      background-size: 100%;
+      // background: url('../images/image-mockups.png') right bottom no-repeat;
+      // background-size: 100%;
+      background: none;
       // width: 730px;
       left: 150px;
       right: 0;
