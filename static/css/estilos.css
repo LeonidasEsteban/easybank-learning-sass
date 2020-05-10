@@ -1,4 +1,79 @@
+.header {
+  display: flex;
+  padding: 1em 1.5em;
+  justify-content: space-between; }
+
+.hero {
+  text-align: center;
+  padding-bottom: 5em; }
+  .hero .copy {
+    margin-bottom: 2.5em; }
+  .hero__image {
+    height: 300px;
+    margin: 0 calc(-1 * var(--wrapperSpace));
+    background: url("../images/image-mockups.png") center bottom no-repeat, url("../images/bg-intro-mobile.svg") center no-repeat;
+    background-size: 345px, cover;
+    margin-bottom: 1.2em; }
+
+.menu {
+  width: 40px;
+  background: url("../images/icon-hamburger.svg") no-repeat center; }
+
+.why {
+  text-align: center;
+  background: var(--gray);
+  padding-top: 5em; }
+  .why .copy {
+    margin-bottom: 4em;
+    font-size: 1em; }
+  .why__item .copy {
+    margin-bottom: 2em; }
+  .why__item img {
+    margin-bottom: 1.5em; }
+
+:root {
+  --darkBlue: hsl(233, 26%, 24%);
+  --limeGreen: hsl(136, 65%, 51%);
+  --rightCyan: hsl(192, 70%, 51%);
+  --grayBlue: hsl(233, 8%, 62%);
+  --gray: hsl(220, 16%, 96%);
+  --lightGray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  font-size: 16px;
+  --wrapperSpace: 1.5em; }
+
 body {
-  border: 10px solid purple; }
+  font-family: 'Public Sans', sans-serif;
+  margin: 0;
+  color: var(--grayBlue); }
+
+.copy {
+  line-height: 1.7;
+  font-size: .9em; }
+
+.is-hidden {
+  display: none !important; }
+
+.wrapper {
+  padding: 0 var(--wrapperSpace); }
+
+.title {
+  border: 1px solid red; }
+  .title__h1, .title__h2 {
+    font-size: 2.5em;
+    color: var(--darkBlue);
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 0;
+    margin-bottom: .5em; }
+  .title__h2 {
+    font-size: 1.5em; }
+
+.button {
+  padding: .9em 2.2em;
+  font-size: 1em;
+  border-radius: 1.5em;
+  color: var(--white);
+  background-image: linear-gradient(to right, var(--limeGreen) 0%, var(--rightCyan) 100%); }
 
 /*# sourceMappingURL=estilos.css.map */
