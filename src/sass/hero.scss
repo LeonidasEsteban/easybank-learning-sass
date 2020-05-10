@@ -19,14 +19,15 @@
     background-size: cover;
     min-height: 550px;
     box-sizing: border-box;
+
     &__content {
+      position: relative;
       border: 1px solid red;
       display: grid;
       align-items: center;
       min-height: 550px;
       grid-template-areas: "description image";
       grid-template-columns: 480px 1fr;
-      position: relative;
     }
     &__description {
       border: 1px solid green;
@@ -49,14 +50,18 @@
   @media screen and (min-width: 1024px){
     // background: url('../images/bg-intro-desktop.svg') left 650px top -290px no-repeat ;
     &__content {
-      position: static;
+      // position: static;
     }
     &__image {
-      background: url('../images/image-mockups.png') right -100px bottom no-repeat;
-      width: 730px;
-      left: initial;
+      // border: 10px solid pink;
+      background: url('../images/image-mockups.png') right bottom no-repeat;
+      background-size: 100%;
+      // width: 730px;
+      left: 150px;
       right: 0;
-      top: initial;
+      top: 0;
+      // right: 0;
+      // top: initial;
     }
   }
 }

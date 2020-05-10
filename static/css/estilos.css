@@ -1,7 +1,21 @@
 .header {
   display: flex;
-  padding: 1em 1.5em;
+  padding: 1em 0;
   justify-content: space-between; }
+  .header__logo {
+    align-self: center; }
+  .header .button {
+    display: none; }
+  .header__content {
+    display: flex;
+    justify-content: space-between; }
+  @media screen and (min-width: 1024px) {
+    .header .button {
+      display: inline; }
+    .header__content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between; } }
 
 .hero {
   text-align: center;
@@ -23,13 +37,13 @@
       min-height: 550px;
       box-sizing: border-box; }
       .hero__content {
+        position: relative;
         border: 1px solid red;
         display: grid;
         align-items: center;
         min-height: 550px;
         grid-template-areas: "description image";
-        grid-template-columns: 480px 1fr;
-        position: relative; }
+        grid-template-columns: 480px 1fr; }
       .hero__description {
         border: 1px solid green; }
       .hero__image {
@@ -44,18 +58,29 @@
         background: url("../images/image-mockups.png") left bottom no-repeat;
         background-size: cover; } }
   @media screen and (min-width: 1024px) {
-    .hero__content {
-      position: static; }
     .hero__image {
-      background: url("../images/image-mockups.png") right -100px bottom no-repeat;
-      width: 730px;
-      left: initial;
+      background: url("../images/image-mockups.png") right bottom no-repeat;
+      background-size: 100%;
+      left: 150px;
       right: 0;
-      top: initial; } }
+      top: 0; } }
 
 .menu {
-  width: 40px;
-  background: url("../images/icon-hamburger.svg") no-repeat center; }
+  display: none;
+  list-style: none; }
+  .menu__button {
+    width: 40px;
+    height: 40px;
+    background: url("../images/icon-hamburger.svg") no-repeat center; }
+  .menu a {
+    text-decoration: none;
+    color: var(--grayBlue);
+    padding: 0 .8em; }
+  @media screen and (min-width: 1024px) {
+    .menu {
+      display: flex; }
+      .menu__button {
+        display: none; } }
 
 .why {
   text-align: center;
@@ -68,12 +93,23 @@
     margin-bottom: 2em; }
   .why__item img {
     margin-bottom: 1.5em; }
+  @media screen and (min-width: 768px) {
+    .why {
+      text-align: left; }
+      .why__grid {
+        display: grid;
+        grid-column-gap: 1em;
+        grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 1024px) {
+    .why__grid {
+      grid-template-columns: repeat(4, 1fr); } }
 
 .latestArticles {
   padding: 5em 0;
   background: var(--lightGray); }
   .latestArticles .title__h1 {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 1em; }
   .latestArticles__grid {
     display: grid;
     grid-row-gap: 2em; }
@@ -93,13 +129,25 @@
       width: 100%;
       object-fit: cover;
       display: block; }
+  @media screen and (min-width: 768px) {
+    .latestArticles .title__h1 {
+      text-align: left; }
+    .latestArticles__item-content {
+      padding: 1em; }
+    .latestArticles__grid {
+      display: grid;
+      grid-column-gap: 30px;
+      grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 1024px) {
+    .latestArticles__grid {
+      grid-template-columns: repeat(4, 1fr); } }
 
 .footer {
   background: var(--darkBlue);
   color: var(--white);
   padding: 2em 0;
   text-align: center; }
-  .footer svg {
+  .footer__logo {
     display: block;
     margin: auto;
     margin-bottom: 2em; }
@@ -117,6 +165,28 @@
   .footer__copyright {
     color: var(--grayBlue);
     margin-top: 2.5em; }
+  @media screen and (min-width: 1024px) {
+    .footer .wrapper {
+      display: grid;
+      grid-column-gap: 7em;
+      grid-template-columns: 200px 1fr 400px;
+      grid-template-areas: "logo links button" "social links copyright"; }
+    .footer__links {
+      grid-area: links;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: start; }
+    .footer__logo {
+      grid-area: logo;
+      margin: initial; }
+    .footer__social {
+      grid-area: social; }
+    .footer__button {
+      grid-area: button;
+      text-align: right; }
+    .footer__copyright {
+      grid-area: copyright;
+      text-align: right; } }
 
 :root {
   --darkBlue: hsl(233, 26%, 24%);
@@ -144,7 +214,8 @@ body {
 .wrapper {
   padding: 0 var(--wrapperSpace);
   max-width: 1115px;
-  margin: auto; }
+  margin: auto;
+  width: 100%; }
 
 .title__h1 {
   font-size: 2.5em;

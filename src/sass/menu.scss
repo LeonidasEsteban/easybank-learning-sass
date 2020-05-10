@@ -1,5 +1,22 @@
 .menu {
-  // border: 1px solid green;
-  width: 40px;
-  background: url('../images/icon-hamburger.svg') no-repeat center;
+  // border: 1px solid red;
+  display: none;
+  list-style: none;
+  &__button {
+    // border: 1px solid green;
+    width: 40px;
+    height: 40px;
+    background: url('../images/icon-hamburger.svg') no-repeat center;
+  }
+  a {
+    text-decoration: none;
+    color: var(--grayBlue);
+    padding: 0 .8em;
+  }
+  @media screen and (min-width: 1024px){
+    display: flex;
+    &__button {
+      display: none;
+    }
+  }
 }

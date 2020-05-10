@@ -3,6 +3,7 @@
   background: var(--lightGray);
   .title__h1 {
     text-align: center;
+    margin-bottom: 1em;
   }
   // .title__h3 {
   //   text-align: left;
@@ -30,6 +31,26 @@
       width: 100%;
       object-fit: cover;
       display: block;
+    }
+  }
+  @media screen and (min-width: 768px){
+    .title__h1 {
+      text-align: left;
+    }
+    &__item {
+      &-content {
+        padding: 1em;
+      }
+    }
+    &__grid {
+      display: grid;
+      grid-column-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (min-width: 1024px){
+    &__grid {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
