@@ -1,6 +1,7 @@
 .hero {
   text-align: center;
   padding-bottom: 5em;
+  background: var(--lightGray);
   .copy {
     margin-bottom: 2.5em;
   }
@@ -11,5 +12,51 @@
     background: url('../images/image-mockups.png') center bottom no-repeat, url('../images/bg-intro-mobile.svg') center no-repeat ;
     background-size: 345px, cover;
     margin-bottom: 1.2em;
+  }
+  @media screen and (min-width: 768px) {
+    text-align: left;
+    background: url('../images/bg-intro-desktop.svg') left 650px top -290px no-repeat ;
+    background-size: cover;
+    min-height: 550px;
+    box-sizing: border-box;
+    &__content {
+      border: 1px solid red;
+      display: grid;
+      align-items: center;
+      min-height: 550px;
+      grid-template-areas: "description image";
+      grid-template-columns: 480px 1fr;
+      position: relative;
+    }
+    &__description {
+      border: 1px solid green;
+    }
+    &__image {
+      grid-area: image;
+      min-height: inherit;
+      // background: none;
+      position: absolute;
+      border: 1px solid purple;
+      width: 500px;
+      // left: 550px;
+      left: 0;
+      top: 0;
+      height: 768px;
+      background: url('../images/image-mockups.png') left bottom no-repeat;
+      background-size: cover;
+    }
+  }
+  @media screen and (min-width: 1024px){
+    // background: url('../images/bg-intro-desktop.svg') left 650px top -290px no-repeat ;
+    &__content {
+      position: static;
+    }
+    &__image {
+      background: url('../images/image-mockups.png') right -100px bottom no-repeat;
+      width: 730px;
+      left: initial;
+      right: 0;
+      top: initial;
+    }
   }
 }
